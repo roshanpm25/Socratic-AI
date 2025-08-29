@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { getGeminiResponse } from "../api/gemini";
-// import from gemini.js
+import "./chatbox.css"; // add this line
 
 export default function ChatBox() {
   const [messages, setMessages] = useState([]);
@@ -20,13 +20,18 @@ export default function ChatBox() {
   };
 
   return (
-    <div>
+    <div className="chat-container">
       <div className="chat-box">
         {messages.map((msg, idx) => (
-          <p key={idx} className={msg.role}>
-            <b>{msg.role === "user" ? "You: " : "Tutor: "}</b>
-            {msg.content}
-          </p>
+          <div
+            key={idx}
+            className={`message ${msg.role === "user" ? "user" : "assistant"}`}
+          >
+            <span className="role">
+              {msg.role === "user" ? "🧑 You" : "📘 Tutor"}
+            </span>
+            <p>{msg.content}</p>
+          </div>
         ))}
       </div>
 
@@ -34,9 +39,9 @@ export default function ChatBox() {
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask something..."
+          placeholder="Ask me about fractions..."
         />
-        <button onClick={handleSend}>Send</button>
+        <button onClick={handleSend}>Send ➤</button>
       </div>
     </div>
   );
