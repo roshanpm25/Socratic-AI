@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { getGeminiResponse } from "../api/gemini";
-// import from gemini.js
+
 
 export default function ChatBox() {
   const [messages, setMessages] = useState([]);
@@ -9,13 +9,14 @@ export default function ChatBox() {
   const handleSend = async () => {
     if (!input.trim()) return;
 
-    // user message
+    
     const newMessages = [...messages, { role: "user", content: input }];
     setMessages(newMessages);
     setInput("");
 
-    // tutor response
-    const reply = await getGeminiResponse(input);
+  
+const reply = await getGeminiResponse(input, messages);
+
     setMessages([...newMessages, { role: "assistant", content: reply }]);
   };
 
@@ -41,3 +42,4 @@ export default function ChatBox() {
     </div>
   );
 }
+
