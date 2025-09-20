@@ -1,0 +1,159 @@
+/* Container */
+body{
+  background: #c0cee6;
+}
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  max-width: 1600px;
+  margin: 20px auto;
+  border-radius: 12px;
+  background:  #1b3f7e;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.chat-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50; /* A dark, professional color */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Messages area */
+.chat-box {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background: #1b3f7e;
+}
+
+/* Individual message */
+.message {
+  margin: 10px 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  max-width: 75%;
+  line-height: 1.4;
+  animation: fadeIn 0.3s ease;
+  color: #000;
+}
+
+
+
+/* User (right side bubble) */
+/* User (right side bubble) */
+.message.user {
+  background: #f2becc;   /* light blue */
+  color: #000000;           /* black text */
+  align-self: flex-end;
+  margin-left: auto;      /* push bubble to the right edge */
+  text-align: right;
+  border-bottom-right-radius: 0;
+  
+}
+
+
+/* Assistant (left side bubble) */
+.message.assistant {
+  background: #e6f7e6;   /* light green */
+  color: #000;           /* black text */
+  align-self: flex-start;
+  text-align: left;
+  border-bottom-left-radius: 0;
+}
+
+
+
+/* Role labels */
+.role {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+/* Input box */
+.input-box {
+  display: flex;
+  padding: 12px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.input-box input:focus {
+  border: 1px solid #4a90e2;
+}
+
+.input-box button {
+  margin-left: 10px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #1b024d;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.input-box button:hover {
+  background: #8e0372;
+}
+
+/* Styling for the quick-reply buttons */
+.quick-replies {
+  display: flex;
+  justify-content: flex-end; /* Align to the right */
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 0 10px;
+  background:  #1b3f7e;
+}
+
+.quick-replies button {
+  padding: 8px 15px;
+  padding-top: 10px;
+  font-size: 0.9em;
+  background-color: #e9ecef;
+  color: #000000;
+  border: 1px solid #ced4da;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.quick-replies button:hover {
+  background-color: #d8dee3;
+  transform: translateY(-2px);
+}
+
+/* Smooth fade-in for messages */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,119 @@
+/*
+ * Main container for the entire quiz page.
+ * Sets up a centered, card-like appearance.
+ */
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f7f9fc;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  min-height: 450px;
+}
+
+/* * Style for the message when no questions are found.
+ */
+.quiz-container.error-message {
+  text-align: center;
+}
+
+/*
+ * Section containing the question number and text.
+ */
+.question-section {
+  text-align: center;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.question-count {
+  font-size: 1.1em;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.question-text {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #333;
+}
+
+/*
+ * Container for all the answer buttons.
+ */
+.answer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.answer-section button {
+  padding: 18px;
+  font-size: 1.1em;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s, border-color 0.3s;
+  width: 100%;
+  text-align: left;
+}
+
+.answer-section button:hover {
+  background-color: #eef1f6;
+  border-color: #c0c0c0;
+  transform: translateY(-2px);
+}
+
+/*
+ * Styling for the final score screen.
+ */
+.score-section {
+  text-align: center;
+  width: 100%;
+}
+
+.score-section h2 {
+  font-size: 2.5em;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.score-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.score-buttons button {
+  padding: 12px 25px;
+  font-size: 1em;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.score-buttons button:first-child {
+  background-color: #3498db;
+  color: white;
+}
+
+.score-buttons button:last-child {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.score-buttons button:hover {
+  opacity: 0.9;
+}
